@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# Prabhubhakti - AI-Powered Astrology Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
 
-## Get started
+**Prabhubhakti** is a comprehensive React Native mobile application designed to provide personalized astrological insights and spiritual guidance. By leveraging advanced AI and precise astronomical calculations, the application offers users a unique blend of traditional Vedic astrology and modern technology.
 
-1. Install dependencies
+The core of the application features an intelligent Chatbot that acts as a personal astrologer, capable of interpreting Kundali (birth charts) and answering user queries in both English and Hindi.
 
-   ```bash
-   npm install
-   ```
+## Key Features
 
-2. Start the app
+-   **Personalized Kundali Generation**: Generates detailed Vedic birth charts (D1 Chart) based on the user's specific date, time, and place of birth.
+-   **AI Astrologer Chatbot**:
+    -   Interactive chat interface powered by advanced LLMs (via OpenRouter).
+    -   Context-aware responses that utilize the user's generated Kundali data.
+    -   **Multilingual Support**: Seamlessly communicates in English and Hindi (Devanagari script) based on user preference.
+    -   **Typewriter Effect**: Engaging message delivery for a natural conversation flow.
+-   **User Authentication**: Secure Login and Sign-up functionality integrated with Firebase Authentication (Email/Password & Google Sign-In).
+-   **Profile Management**: Stores and manages user details and birth information efficiently using Cloud Firestore.
+-   **Bilingual Interface**: Full application support for English and Hindi languages, managed via a dedicated Language Context.
+-   **Modern UI/UX**: Aesthetically pleasing design featuring heavy use of linear gradients, smooth animations, and intuitive navigation.
 
-   ```bash
-   npx expo start
-   ```
+## Technology Stack
 
-In the output, you'll find options to open the app in a
+### Frontend
+-   **Framework**: [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/) (SDK 52)
+-   **Language**: TypeScript
+-   **Navigation**: Expo Router
+-   **Styling**: React Native StyleSheet, `expo-linear-gradient`
+-   **Icons**: Ionicons (`@expo/vector-icons`)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Backend & Services
+-   **Authentication**: Firebase Authentication
+-   **Database**: Cloud Firestore
+-   **AI Integration**: OpenRouter API (OpenAI/Other LLMs)
+-   **Astrology Data**: Third-party Astrology API integration for planetary data and chart generation
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Prerequisites
 
-## Get a fresh project
+Ensure you have the following installed on your development machine:
 
-When you're ready, run:
+-   [Node.js](https://nodejs.org/) (LTS version recommended)
+-   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+-   [Android Studio](https://developer.android.com/studio) (for Android Emulator) or Xcode (for iOS Simulator)
+-   [Expo Go](https://expo.dev/client) app installed on your physical device (optional)
+
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/prabhubhakti.git
+    cd prabhubhakti
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+## Configuration
+
+The application requires specific API keys to function correctly. Create a configuration file or environment variables as per your project structure (typically `config.ts` or `.env`).
+
+**Required Keys:**
+-   **Firebase Config**: `apiKey`, `authDomain`, `projectId`, `storageBucket`, `messagingSenderId`, `appId`
+-   **OpenAI / OpenRouter API Key**: For the chatbot functionality.
+-   **Astrology API Key**: For fetching Kundali and planetary data.
+
+*> Note: Never commit your API keys to version control.*
+
+## Running the Application
+
+Start the Expo development server:
 
 ```bash
-npm run reset-project
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+-   **To run on Android Emulator**: Press `a` in the terminal.
+-   **To run on iOS Simulator**: Press `i` in the terminal (macOS only).
+-   **To run on Physical Device**: Scan the QR code using the Expo Go app.
 
-## Learn more
+## Project Structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+Prabhubhakti/
+├── app/                 # Entry point and navigation setup
+├── components/          # Reusable UI components
+├── config/              # Configuration files (Firebase, APIs)
+├── context/             # React Context Providers (e.g., LanguageContext)
+├── navigation/          # Navigation configurations
+├── Screens/             # Main application screens (ChatBot, Home, Login, etc.)
+├── assets/              # Images, fonts, and static resources
+└── utils/               # Helper functions and utilities
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Contributing
 
-## Join the community
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that you follow the existing code style and best practices.
 
-Join our community of developers creating universal apps.
+## License
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is proprietary. All rights reserved.
